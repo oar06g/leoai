@@ -67,7 +67,7 @@ class AdvancedAI:
         # إعداد أدوات التعلم غير الخاضع للإشراف
         self.pca = PCA(n_components=50)
         # استخدام t-SNE من sklearn بدلاً من UMAP
-        # self.umap = UMAP(n_neighbors=15, n_components=2, min_dist=0.1)
+        # self.umap = UMAP(n_neighbors=15, n_components=min(4, len(embeddings)), min_dist=0.1)
         self.kmeans = KMeans(n_clusters=5, random_state=42)
         self.dbscan = DBSCAN(eps=0.5, min_samples=5)
         
